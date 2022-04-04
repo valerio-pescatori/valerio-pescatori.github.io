@@ -1,15 +1,71 @@
-body {
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap");
+
+* {
+  box-sizing: border-box;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  padding: 0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #454545 !important;
-  color: #ECEBEB !important;
+  color: #ecebeb !important;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.container {
+  width: 1100px;
+  max-width: 100%;
+  padding: 0 20px;
+  margin: 0 auto;
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+img {
+  width: 150px;
+  background: #8f91a2;
+  border: solid 3px #94b0da;
+  border-radius: 50%;
+  margin-top: 50px;
+}
+
+.triangle {
+  position: absolute;
+  width: 0;
+  height: 0;
+  margin-left: 130px;
+  border-style: solid;
+  border-width: 67px 40px 0 0px;
+  border-color: #454545 transparent transparent transparent;
+}
+
+.navbar ul {
+  list-style-type: none;
+  display: flex;
+}
+
+.navbar {
+  display: flex;
+}
+
+.nav-element {
+  font-weight: 300;
+  transition: all 0.3s ease-in-out;
+  padding: 20px 50px;
+  border: 2px solid #e8e8e8;
+  background-color: #454545;
+  color: #fff;
+}
+
+.nav-element:hover {
+  text-shadow: 1px 1px 10px #94b0da;
+}
+
+*[active="1"] {
+  background-color: #e8e8e8;
+  color: #000;
 }
