@@ -1,5 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap");
 
+:root {
+  --black: #1a1a1d;
+  --gray: #4e4e50;
+  --red1: #6f2232;
+  --red2: #950740;
+  --red3: #c3073f;
+  --white: #e8e8e8;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -10,15 +19,14 @@ body {
   font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #454545 !important;
+  background-color: var(--black);
 }
 
 .container {
-  width: 1100px;
-  max-width: 100%;
-  padding: 0 20px;
+  max-width: 90em;
+  padding: 0 2.5em;
   margin: 0 auto;
-  margin-top: 50px;
+  margin-top: 3em;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -31,143 +39,176 @@ body {
 
 .profile-pic {
   width: 150px;
-  background: #8f91a2;
-  border: solid 3px #94b0da;
+  background: var(--red2);
+  border: solid 3px var(--white);
   border-radius: 50%;
   margin-top: 50px;
-  box-shadow: -5px 5px #00000060;
+  /* box-shadow: -3px 3px 5px var(--gray); */
 }
 
-#nav-el-l[active="1"]::before {
-  content: "";
-  position: absolute;
-  width: 0;
-  height: 0;
-  margin-left: 76px;
-  margin-top: -20px;
-  border-style: solid;
-  border-width: 63px 40px 0 0;
-  border-color: #e8e8e8 transparent transparent transparent;
-  transition: border-color 0.3s ease-in-out;
+#nav-el-l {
+  border-radius: 500px 0 0 500px;
 }
 
-#nav-el-r[active="1"]::before {
-  content: "";
-  position: absolute;
-  width: 0;
-  height: 0;
-  margin-left: -50px;
-  margin-top: -20px;
-  border-style: solid;
-  border-width: 0 0 63px 40px;
-  border-color: transparent transparent #e8e8e8 transparent;
-  transition: border-color 0.3s ease-in-out;
-}
-
-#nav-el-l[active="0"]::before {
-  content: "";
-  position: absolute;
-  width: 0;
-  height: 0;
-  margin-left: 76px;
-  margin-top: -20px;
-  border-style: solid;
-  border-width: 63px 40px 0 0;
-  border-color: #454545 transparent transparent transparent;
-  transition: border-color 0.3s ease-in-out;
-}
-
-#nav-el-r[active="0"]::before {
-  content: "";
-  position: absolute;
-  width: 0;
-  height: 0;
-  margin-left: -50px;
-  margin-top: -20px;
-  border-style: solid;
-  border-width: 0 0 63px 40px;
-  border-color: transparent transparent #454545 transparent;
-  transition: border-color 0.3s ease-in-out;
-}
-
-.navbar ul {
-  list-style-type: none;
-  display: flex;
+#nav-el-r {
+  border-radius: 0 500px 500px 0;
 }
 
 .navbar {
   display: flex;
-  border: 2px solid #e8e8e8;
+  border: 2px solid var(--white);
+  border-radius: 500px;
+  /* box-shadow: 0 0 15px var(--white); */
 }
 
-.navbar * {
-  transition: all 0.3s ease-in-out;
+.tri {
+  pointer-events: none;
+  position: absolute;
+  width: 6.5em;
+  padding-bottom: 3.75em;
+  margin-left: 9em;
+  overflow: hidden;
+}
+
+.tri::before {
+  content: "";
+  position: absolute;
+  margin-left: 70%;
+  width: 100%;
+  height: 100%;
+  transform-origin: left top;
+  transform: rotate(90deg) skewY(28deg);
+  transition: background-color 0.3s ease-in-out;
+}
+
+.tri[active="1"]::before {
+  background-color: var(--red2);
+}
+
+.tri[active="0"]::before {
+  background-color: var(--black);
 }
 
 .nav-element {
-  font-weight: 300;
-  padding: 20px 50px;
-  background-color: #454545;
-  color: #fff;
+  text-align: center;
+  font-weight: 400;
+  padding: 1em 2.8em;
+  background-color: var(--black);
+  color: var(--white);
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
-.nav-element:hover {
-  text-shadow: 1px 1px 10px #94b0da;
+.nav-element[active="0"]:hover {
+  text-shadow: 1px 1px 10px var(--white);
 }
 
-*[active="1"] {
-  background-color: #e8e8e8;
+h3[active="1"] {
+  background-color: var(--red2);
   color: #000;
 }
 
 .card {
-  width: 300px;
-  height: 450px;
-  background-color: #e8e8e8;
-  margin: 10px;
-  border-radius: 5px;
-  box-shadow: -5px 5px #00000060;
+  margin: 1.5em auto;
   display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
-hr {
-  width: 90%;
-  height: 1px;
+.card-title {
+  color: var(--red2);
+  margin: 0.9em 0;
+  font-weight: 800;
+  font-size: 4vmin;
+  align-self: flex-start;
 }
 
 .card-img {
-  width: 100%;
-  height: 50%;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
+  max-width: 100%;
+  max-height: 100%;
+  width: 30%;
 }
 
-/* .card-img::before { shadow 
-  content: "";
-  box-shadow: inset 3px 3px 10px 0 #000;
-  display: block;
-  position: absolute;
-  height: 100%;
-  top: 0;
-  width: 100%;
-} */
-
-.card-title {
-  margin: 0.8em auto;
-  font-weight: 500;
+.card-body {
+  display: flex;
+  width: 70%;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .card-text {
-  text-align: center;
-  margin: 0.5em 1em;
-  color: rgb(44, 44, 44);
-  font-size: 14px;
+  line-height: 1.5em;
+  margin: 1em;
+  margin-top: 0;
+  color: var(--white);
+  font-size: 3vmin;
+  font-weight: 200;
 }
 
 .tags-wrapper {
-  background-color: #94b0da;
+  padding: 0 0.5em;
+  background-color: var(--red2);
   display: flex;
-  height: 10%;
+  justify-content: space-around;
 }
+
+.tag {
+  width: 30px;
+  height: 30px;
+}
+
+.me-card {
+  margin-top: 3em;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--white);
+}
+
+.me-card > h2 {
+  align-self: flex-start;
+  margin-top: 0.5em;
+  font-size: 3em;
+}
+
+.me-card > p {
+  align-self: flex-start;
+  margin-top: 1.5em;
+  font-weight: 300;
+}
+
+/* mobile */
+@media (max-width: 43rem) {
+  .navbar {
+    flex-direction: column;
+    border: 0;
+  }
+
+  .tri {
+    display: none;
+  }
+
+  #nav-el-l {
+    border-radius: 500px;
+    border: 2px solid var(--white);
+    margin-bottom: 1em;
+  }
+
+  #nav-el-r {
+    border-radius: 500px;
+    border: 2px solid var(--white);
+  }
+
+  .card-img {
+    width: 100%;
+    background: linear-gradient(transparent 0%, var(--black) 60%), url("https://dummyimage.com/640x300");
+  }
+
+  .card-body {
+    margin-top: -8em;
+    width: 100%;
+  }
+
+  .card {
+    flex-direction: column;
+  }
+} ;

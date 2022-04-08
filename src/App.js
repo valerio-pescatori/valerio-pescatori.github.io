@@ -1,13 +1,15 @@
 import Header from "./components/Header";
 import Body from "./components/Body";
+import { useState, useEffect } from "react";
 
 function App() {
-  // you can add variables and functions before return
+  const [active, setActive] = useState(0);
+
   return (
-    <div>
-      <Header />
-      <Body />
-    </div>
+    <>
+      <Header active={active} setActive={setActive}/>
+      <Body active={active} />
+    </>
   );
 }
 
