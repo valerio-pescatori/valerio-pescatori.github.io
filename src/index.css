@@ -1,12 +1,13 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
 
 :root {
   --black: #1a1a1d;
   --gray: #4e4e50;
-  --red1: #6f2232;
-  --red2: #950740;
-  --red3: #c3073f;
   --white: #e8e8e8;
+
+  --col1: #4358cf;
+  --col2: #af0d94;
+  --col3: #fdca71;
 }
 
 * {
@@ -39,7 +40,6 @@ body {
 
 .profile-pic {
   width: 150px;
-  background: var(--red2);
   border: solid 3px var(--white);
   border-radius: 50%;
   margin-top: 50px;
@@ -56,9 +56,21 @@ body {
 
 .navbar {
   display: flex;
+  position: relative;
   border: 2px solid var(--white);
   border-radius: 500px;
-  /* box-shadow: 0 0 15px var(--white); */
+}
+
+.navbar::after {
+  content: "";
+  position: absolute;
+  margin-top: 4.5em;
+  margin-left: 1.2em;
+  width: 90%;
+  height: 5px;
+  border-radius: 500px;
+  background: -webkit-linear-gradient(to right, var(--col1), var(--col2), var(--col3));
+  background: linear-gradient(to right, var(--col1), var(--col3));
 }
 
 .tri {
@@ -82,29 +94,33 @@ body {
 }
 
 .tri[active="1"]::before {
-  background-color: var(--red2);
+  background-color: var(--col1);
 }
 
 .tri[active="0"]::before {
-  background-color: var(--black);
+  background-color: var(--col3);
 }
 
 .nav-element {
   text-align: center;
   font-weight: 400;
   padding: 1em 2.8em;
-  background-color: var(--black);
-  color: var(--white);
-  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  background-color: var(--col3);
+  color: var(--black);
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
 }
 
-.nav-element[active="0"]:hover {
+.nav-element:hover {
   text-shadow: 1px 1px 10px var(--white);
 }
 
+.nav-element[active="0"]:hover {
+  text-shadow: 1px 1px 10px var(--black);
+}
+
 h3[active="1"] {
-  background-color: var(--red2);
-  color: #000;
+  background-color: var(--col1);
+  color: var(--white);
 }
 
 .card {
@@ -113,7 +129,7 @@ h3[active="1"] {
 }
 
 .card-title {
-  color: var(--red2);
+  color: var(--col3);
   margin: 0.9em 0;
   font-weight: 800;
   font-size: 4vmin;
@@ -134,7 +150,7 @@ h3[active="1"] {
 }
 
 .card-text {
-  line-height: 1.5em;
+  line-height: 1.2em;
   margin: 1em;
   margin-top: 0;
   color: var(--white);
@@ -144,7 +160,8 @@ h3[active="1"] {
 
 .tags-wrapper {
   padding: 0 0.5em;
-  background-color: var(--red2);
+  background: -webkit-linear-gradient(to right, var(--col1), var(--col2), var(--col3));
+  background: linear-gradient(to right, var(--col1), var(--col2), var(--col3));
   display: flex;
   justify-content: space-around;
 }
@@ -164,10 +181,16 @@ h3[active="1"] {
   color: var(--white);
 }
 
-.me-card > h2 {
+.me-card > h1 {
   align-self: flex-start;
   margin-top: 0.5em;
-  font-size: 3em;
+  font-size: 5em;
+  font-weight: 900;
+  background: var(--col1); /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, var(--col1), var(--col2), var(--col3));
+  background: linear-gradient(to right, var(--col1), var(--col2), var(--col3));
+  background-clip: text;
+  color: transparent;
 }
 
 .me-card > p {
@@ -177,7 +200,7 @@ h3[active="1"] {
 }
 
 /* mobile */
-@media (max-width: 43rem) {
+@media only screen and (max-width: 43rem) {
   .navbar {
     flex-direction: column;
     border: 0;
@@ -198,17 +221,16 @@ h3[active="1"] {
     border: 2px solid var(--white);
   }
 
+  .card {
+    flex-direction: column;
+  }
+
   .card-img {
     width: 100%;
-    background: linear-gradient(transparent 0%, var(--black) 60%), url("https://dummyimage.com/640x300");
   }
 
   .card-body {
-    margin-top: -8em;
     width: 100%;
-  }
-
-  .card {
-    flex-direction: column;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.75) 40%, rgba(0, 0, 0, 1) 70%);
   }
 } ;

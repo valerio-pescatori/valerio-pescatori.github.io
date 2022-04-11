@@ -1,7 +1,7 @@
 const Me = () => {
   return (
     <div className="me-card">
-      <h2>Hi, I'm Valerio.</h2>
+      <h1>Hi, I'm Valerio.</h1>
       <p>
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam nostrum pariatur architecto harum nulla numquam
         provident doloremque sit alias, sequi soluta natus atque vero cum culpa autem perferendis eius illum fuga
