@@ -1,7 +1,8 @@
 import { useEffect } from "react";
+import { motion } from "framer-motion";
 
 function formatTags(tags) {
-  return tags.map((t, i) => <img className="tag" src={"imgs/" + t + ".png"} key={i}></img>);
+  return tags.map((t, i) => <img className="tag" src={"icons/" + t + ".png"} key={i}></img>);
 }
 
 function debounce(fn, ms) {
@@ -38,7 +39,7 @@ const Card = (props) => {
     const debouncedHandleResize = debounce(() => {
       //handle resize code
       var elements = document.getElementsByClassName("card-body");
-      if (getBreakPoint(window.innerWidth) == "sm") {
+      if (getBreakPoint(window.innerWidth) === "sm") {
         for (let element of elements) {
           element.style.height = element.previousSibling.clientHeight + "px";
           element.style.justifyContent = "flex-end";
@@ -63,16 +64,21 @@ const Card = (props) => {
   });
 
   return (
-    <>
+    <motion.div
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.8 }}
+    >
       <h3 className="card-title">{props.title}</h3>
-      <div className="card">
+      <a className="card" href={props.link}>
         <img src={props.imgSrc} className="card-img"></img>
         <div className="card-body">
           <p className="card-text">{props.text}</p>
           <div className="tags-wrapper">{formatTags(props.tags)}</div>
         </div>
-      </div>
-    </>
+      </a>
+    </motion.div>
   );
 };
 

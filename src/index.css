@@ -6,8 +6,7 @@
   --white: #e8e8e8;
 
   --col1: #4358cf;
-  --col2: #af0d94;
-  --col3: #fdca71;
+  --col2: #fdca71;
 }
 
 * {
@@ -21,6 +20,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--black);
+  overflow-x: hidden;
 }
 
 .container {
@@ -46,31 +46,36 @@ body {
   /* box-shadow: -3px 3px 5px var(--gray); */
 }
 
+.navbar {
+  display: flex;
+  position: relative;
+  flex-wrap: wrap;
+  justify-content: center;
+  /* border: 2px solid var(--white); */
+  /* border-radius: 500px; */
+}
+
 #nav-el-l {
+  border: 2px solid var(--white);
   border-radius: 500px 0 0 500px;
+  border-right: 0;
 }
 
 #nav-el-r {
   border-radius: 0 500px 500px 0;
-}
-
-.navbar {
-  display: flex;
-  position: relative;
   border: 2px solid var(--white);
-  border-radius: 500px;
+  border-left: 0;
 }
 
-.navbar::after {
-  content: "";
-  position: absolute;
-  margin-top: 4.5em;
-  margin-left: 1.2em;
-  width: 90%;
+.nav-line {
+  order: 3;
+  margin-top: 1em;
+  padding-right: 40%;
   height: 5px;
   border-radius: 500px;
-  background: -webkit-linear-gradient(to right, var(--col1), var(--col2), var(--col3));
-  background: linear-gradient(to right, var(--col1), var(--col3));
+  background: -webkit-linear-gradient(to right, var(--col1), var(--col2));
+  background: linear-gradient(to right, var(--col1), var(--col2));
+  transform: translateX(-65%);
 }
 
 .tri {
@@ -78,7 +83,8 @@ body {
   position: absolute;
   width: 6.5em;
   padding-bottom: 3.75em;
-  margin-left: 9em;
+  border-top: 2px solid var(--white);
+  margin-left: -2em;
   overflow: hidden;
 }
 
@@ -98,14 +104,14 @@ body {
 }
 
 .tri[active="0"]::before {
-  background-color: var(--col3);
+  background-color: var(--col2);
 }
 
 .nav-element {
   text-align: center;
   font-weight: 400;
   padding: 1em 2.8em;
-  background-color: var(--col3);
+  background-color: var(--col2);
   color: var(--black);
   transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
 }
@@ -126,13 +132,14 @@ h3[active="1"] {
 .card {
   margin: 1.5em auto;
   display: flex;
+  text-decoration: none;
 }
 
 .card-title {
-  color: var(--col3);
+  color: var(--col2);
   margin: 0.9em 0;
   font-weight: 800;
-  font-size: 4vmin;
+  font-size: 2.5rem;
   align-self: flex-start;
 }
 
@@ -160,15 +167,15 @@ h3[active="1"] {
 
 .tags-wrapper {
   padding: 0 0.5em;
-  background: -webkit-linear-gradient(to right, var(--col1), var(--col2), var(--col3));
-  background: linear-gradient(to right, var(--col1), var(--col2), var(--col3));
+  background: -webkit-linear-gradient(to right, var(--col1), var(--col2));
+  background: linear-gradient(to right, var(--col1), var(--col2));
   display: flex;
   justify-content: space-around;
 }
 
 .tag {
   width: 30px;
-  height: 30px;
+  margin: 0.2em;
 }
 
 .me-card {
@@ -187,8 +194,8 @@ h3[active="1"] {
   font-size: 5em;
   font-weight: 900;
   background: var(--col1); /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, var(--col1), var(--col2), var(--col3));
-  background: linear-gradient(to right, var(--col1), var(--col2), var(--col3));
+  background: -webkit-linear-gradient(to right, var(--col1), var(--col2));
+  background: linear-gradient(to right, var(--col1), var(--col2));
   background-clip: text;
   color: transparent;
 }
@@ -203,7 +210,6 @@ h3[active="1"] {
 @media only screen and (max-width: 43rem) {
   .navbar {
     flex-direction: column;
-    border: 0;
   }
 
   .tri {

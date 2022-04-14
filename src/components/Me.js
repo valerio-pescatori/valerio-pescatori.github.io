@@ -1,5 +1,6 @@
-const Me = () => {
-  return (
+const Me = () => (
+  <>
+    <img src="https://dummyimage.com/300x300/fff/950740" className="profile-pic" alt="My profile picture" />
     <div className="me-card">
       <h1>Hi, I'm Valerio.</h1>
       <p>
@@ -16,7 +17,7 @@ const Me = () => {
         labore beatae facilis dolores.
       </p>
     </div>
-  );
-};
+  </>
+);
 
 export default Me;
