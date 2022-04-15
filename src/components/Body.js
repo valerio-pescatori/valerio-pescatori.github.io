@@ -29,17 +29,9 @@ const cards = [
 const Body = ({ active }) => {
   return (
     <>
-      <AnimatePresence exitBeforeEnter={true} initial={false}>
+      <AnimatePresence exitBeforeEnter={true}>
         {!active ? (
-          <motion.div
-            className="container flex-column"
-            initial={{ x: "-100vw", opacity: 0 }}
-            animate={{ x: "0vw", opacity: 1 }}
-            exit={{ x: "-100vw", opacity: 0 }}
-            key="me"
-          >
-            <Me />
-          </motion.div>
+          <Me key="me" />
         ) : (
           <motion.div
             className="container flex-column"

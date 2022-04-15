@@ -21,6 +21,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--black);
   overflow-x: hidden;
+  padding-bottom: 3em;
 }
 
 .container {
@@ -40,10 +41,11 @@ body {
 
 .profile-pic {
   width: 150px;
+  height: 150px;
+  background-color: var(--white);
   border: solid 3px var(--white);
   border-radius: 50%;
   margin-top: 50px;
-  /* box-shadow: -3px 3px 5px var(--gray); */
 }
 
 .navbar {
@@ -70,7 +72,6 @@ body {
 .nav-line {
   order: 3;
   margin-top: 1em;
-  padding-right: 40%;
   height: 5px;
   border-radius: 500px;
   background: -webkit-linear-gradient(to right, var(--col1), var(--col2));
@@ -210,6 +211,11 @@ h3[active="1"] {
 @media only screen and (max-width: 43rem) {
   .navbar {
     flex-direction: column;
+  }
+
+  .nav-line {
+    height: 0;
+    width: 5px;
   }
 
   .tri {
