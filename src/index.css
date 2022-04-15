@@ -161,7 +161,7 @@ h3[active="1"] {
   margin: 1em;
   margin-top: 0;
   color: var(--white);
-  font-size: 3vmin;
+  font-size: clamp(12pt, 3vmin, 3vmin);
   font-weight: 200;
 }
 
@@ -237,6 +237,5 @@ h3[active="1"] {
 
   .card-body {
     width: 100%;
-    background: linear-gradient(transparent, rgba(0, 0, 0, 0.75) 40%, rgba(0, 0, 0, 1) 70%);
   }
 } ;

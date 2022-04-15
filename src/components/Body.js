@@ -29,7 +29,7 @@ const cards = [
 const Body = ({ active }) => {
   return (
     <>
-      <AnimatePresence exitBeforeEnter={true}>
+      <AnimatePresence exitBeforeEnter={true} initial={false}>
         {!active ? (
           <motion.div
             className="container flex-column"
