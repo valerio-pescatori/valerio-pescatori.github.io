@@ -5,21 +5,35 @@ import { useAnimation } from "framer-motion";
 import { getBreakPoint, debounce } from "./../utils";
 
 function handleResize() {
-  //handle resize code
-  var elements = document.getElementsByClassName("card-body");
+  var bodyElements = document.getElementsByClassName("card-body");
+  var textElements = document.getElementsByClassName("card-text");
+
   if (getBreakPoint(window.innerWidth) === "sm") {
-    for (let element of elements) {
-      element.style.flexBasis = element.parentElement.clientHeight + "px";
+    for (let element of bodyElements) {
+      element.style.height = element.previousElementSibling.clientHeight + "px";
       element.style.justifyContent = "flex-end";
       element.style.marginTop = -element.clientHeight + "px";
-      element.style.background = "linear-gradient(transparent, rgba(0, 0, 0, 0.75) 40%, rgba(0, 0, 0, 1) 70%)";
+      element.style.background = "rgba(0, 0, 0, 0.60)";
+    }
+
+    //handle text
+    for (let element of textElements) {
+      if (element.scrollHeight > element.clientHeight && element.childElementCount < 1) {
+        var s = element.innerHTML;
+        element.innerHTML = s.substring(0, s.length / 2) + "..." + "<p style='display:none'>" + s + "</p>";
+      }
     }
   } else {
-    for (let element of elements) {
+    // reset
+    for (let element of bodyElements) {
       element.style.justifyContent = "space-between";
-      element.style.flexBasis = null;
+      element.style.height = null;
       element.style.marginTop = null;
       element.style.background = null;
+    }
+
+    for (let element of textElements) {
+      if (element.childElementCount > 0) element.innerHTML = element.removeChild(element.firstElementChild).textContent;
     }
   }
 }
@@ -60,7 +74,7 @@ const Card = (props) => {
           <p className="card-text">{props.text}</p>
           <div className="tags-wrapper">
             {props.tags.map((t, i) => (
-              <img className="tag" src={"icons/" + t + ".png"} key={i}></img>
+              <img className="tag" src={"icons/" + t} key={i}></img>
             ))}
           </div>
         </div>

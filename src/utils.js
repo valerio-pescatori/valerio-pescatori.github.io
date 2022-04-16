@@ -4,7 +4,7 @@ export function debounce(fn, ms, args = null) {
     clearTimeout(timer);
     timer = setTimeout((_) => {
       timer = null;
-      fn.apply(this, args);
+      fn.call(this, args);
     }, ms);
   };
 }
