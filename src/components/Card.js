@@ -16,13 +16,13 @@ function handleResize() {
       element.style.background = "rgba(0, 0, 0, 0.60)";
     }
 
-    //handle text
-    for (let element of textElements) {
-      if (element.scrollHeight > element.clientHeight && element.childElementCount < 1) {
-        var s = element.innerHTML;
-        element.innerHTML = s.substring(0, s.length / 2) + "..." + "<p style='display:none'>" + s + "</p>";
-      }
-    }
+    // //handle text
+    // for (let element of textElements) {
+    //   if (element.clientHeight != 0 && element.scrollHeight > element.clientHeight && element.childElementCount < 1) {
+    //     var s = element.innerHTML;
+    //     element.innerHTML = s.substring(0, s.length / 2) + "..." + "<p style='display:none'>" + s + "</p>";
+    //   }
+    // }
   } else {
     // reset
     for (let element of bodyElements) {
@@ -32,9 +32,9 @@ function handleResize() {
       element.style.background = null;
     }
 
-    for (let element of textElements) {
-      if (element.childElementCount > 0) element.innerHTML = element.removeChild(element.firstElementChild).textContent;
-    }
+    // for (let element of textElements) {
+    //   if (element.childElementCount > 0) element.innerHTML = element.removeChild(element.firstElementChild).textContent;
+    // }
   }
 }
 
@@ -71,7 +71,10 @@ const Card = (props) => {
       <motion.a className="card" href={props.link} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
         <img className="card-img" src={props.imgSrc} onLoad={handleResize}></img>
         <div className="card-body">
-          <p className="card-text">{props.text}</p>
+          <p className="card-text">
+            {props.text}
+            <span style={{ width: "100%" }}></span>
+          </p>
           <div className="tags-wrapper">
             {props.tags.map((t, i) => (
               <img className="tag" src={"icons/" + t} key={i}></img>

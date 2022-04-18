@@ -21,25 +21,33 @@ const Me = () => {
           animate={{ opacity: 1, transition: { delay: 0.5 } }}
           exit={{ x: "-100vw", opacity: 0 }}
         >
-          Hi, I'm Valerio.
+          Hi, I'm Valerio Pescatori
         </motion.h1>
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1, transition: { delay: 1 } }}
           exit={{ x: "-100vw", opacity: 0 }}
         >
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam nostrum pariatur architecto harum nulla numquam
-          provident doloremque sit alias, sequi soluta natus atque vero cum culpa autem perferendis eius illum fuga
-          eveniet enim? Deserunt pariatur, rerum delectus repudiandae, sapiente excepturi rem illum quis quo voluptas in
-          corporis provident, aliquam ex sed quasi! Earum quasi quod ullam ipsam cupiditate incidunt cum iure rem alias
-          perspiciatis, ea commodi? Quis harum veniam reiciendis eveniet excepturi eos possimus, deleniti magnam
-          voluptatibus unde eum? Quae maiores iure id odit reiciendis doloribus, adipisci excepturi inventore, quibusdam
-          illum, libero illo aperiam modi consequuntur hic recusandae iste culpa! Fugiat, animi. Dicta inventore
-          reiciendis cum molestiae quidem tenetur nam autem esse sit consequuntur, accusantium provident alias vero
-          obcaecati facere molestias labore aliquid architecto officia eligendi magni quos. Quaerat consequatur
-          consectetur quos laboriosam nam, quod, sequi in ea assumenda, sed voluptas eaque qui blanditiis delectus
-          eveniet labore beatae facilis dolores.
+          I'm 23 years old and I got my Bachelor's Degree in Computer Science in March 2022 at Sapienza, University of
+          Rome with a graduation mark of 106/110. My academic background started with the frequentation of Luigi
+          Trafelli Techincal Institute from which I got my High School diploma in Computer Science with a final grade
+          mark of 93/100. After that I immediately applied for the Computer Science course at Sapienza, University of
+          Rome. During those years I expanded my knowledge about algorithms and data structures; I've been involved in
+          quite some projects in which I well-estabilished my knowledge with technologies such as Python and the PyTorch
+          framework, Java, Web technologies such as CSS, JavaScript and a few JS frameworks such as Vue.js and React,
+          PHP and the CodeIgniter framework, MySQL, HTML as well as C++ and C#.
         </motion.p>
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1, transition: { delay: 1.5 } }}
+          exit={{ x: "-100vw", opacity: 0 }}
+        >
+          I've been passionate about computer science since I was child and that passion has driven my path study. I'm
+          always curious about new technologies and constantly wanting to try new things; I would say I'm obsessed with
+          trying to understand to a very deep level how programming languages work: that makes me very prone to
+          learning. I enjoy cooperating with other people and I'm willing to broaden my expertise on every occasion.
+        </motion.p>
+        <span style={{ width: "100%" }}></span>
       </motion.div>
     </div>
   );

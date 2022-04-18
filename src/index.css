@@ -25,7 +25,7 @@ body {
 }
 
 .container {
-  max-width: 90em;
+  max-width: 70em;
   padding: 0 2.5em;
   margin: 0 auto;
   margin-top: 3em;
@@ -149,7 +149,6 @@ h3[active="1"] {
 
 .card-img {
   max-width: 100%;
-  max-height: 100%;
   width: 30%;
 }
 
@@ -162,6 +161,7 @@ h3[active="1"] {
 
 .card-text {
   line-height: 1.2em;
+  text-align: justify;
   margin: 1em;
   margin-top: 0;
   color: var(--white);
@@ -195,7 +195,7 @@ h3[active="1"] {
 .me-card > h1 {
   align-self: flex-start;
   margin-top: 0.5em;
-  font-size: 5em;
+  font-size: clamp(40pt, 8.5vmin, 8.5vmin);
   font-weight: 900;
   background: var(--col1); /* fallback for old browsers */
   background: -webkit-linear-gradient(to right, var(--col1), var(--col2));
@@ -206,6 +206,8 @@ h3[active="1"] {
 
 .me-card > p {
   align-self: flex-start;
+  text-align: justify;
+  font-size: clamp(13pt, 2vmin, 2vmin);
   margin-top: 1.5em;
   font-weight: 300;
 }
@@ -280,9 +282,27 @@ svg {
   .card-img,
   .card-body {
     width: 100%;
+    border-radius: 20px;
+  }
+
+  .tags-wrapper {
+    border-radius: 0 0 20px 20px;
   }
 
   .card-text {
     overflow: hidden;
   }
-} ;
+}
+
+@media only screen and (max-width: 576px) {
+  .card-text {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 8;
+    overflow: hidden;
+  }
+
+  .card-img {
+    height: 15em;
+  }
+}
