@@ -1,5 +1,6 @@
 import Header from "./components/Header";
 import Body from "./components/Body";
+import Footer from "./components/Footer";
 import React, { useState, useEffect } from "react";
 import Loader from "./components/Loader";
 import { AnimatePresence } from "framer-motion";
@@ -20,6 +21,7 @@ function App() {
         <React.Fragment key="loaded">
           <Header active={active} setActive={setActive} />
           <Body active={active} />
+          <Footer />
         </React.Fragment>
       )}
     </AnimatePresence>
