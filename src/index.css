@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;700;900&display=swap");
 
 :root {
   --black: #1a1a1d;
@@ -21,7 +21,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--black);
-  overflow-x: hidden;
+  min-width: 360px;
 }
 
 .container {
@@ -53,8 +53,7 @@ body {
   position: relative;
   flex-wrap: wrap;
   justify-content: center;
-  /* border: 2px solid var(--white); */
-  /* border-radius: 500px; */
+  min-width: 360px;
 }
 
 #nav-el-l {
@@ -133,6 +132,8 @@ h3[active="1"] {
   color: var(--white);
 }
 
+/* CARD */
+
 .card {
   margin: 1.5em auto;
   display: flex;
@@ -148,8 +149,9 @@ h3[active="1"] {
 }
 
 .card-img {
+  object-fit: cover;
   max-width: 100%;
-  width: 30%;
+  width: 40%;
 }
 
 .card-body {
@@ -165,8 +167,8 @@ h3[active="1"] {
   margin: 1em;
   margin-top: 0;
   color: var(--white);
-  font-size: clamp(12pt, 3vmin, 3vmin);
-  font-weight: 200;
+  font-size: clamp(18px, 2vw, 26px);
+  font-weight: 300;
 }
 
 .tags-wrapper {
@@ -178,9 +180,12 @@ h3[active="1"] {
 }
 
 .tag {
+  object-fit: contain;
   height: 30px;
   margin: 0.2em;
 }
+
+/* ME SECTION */
 
 .me-card {
   margin-top: 3em;
@@ -290,39 +295,36 @@ svg {
     border: none;
   }
 
-  .container {
-    min-height: 0;
-  }
-
   .card {
-    flex-direction: column;
-    min-height: 0;
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    height: 350px;
   }
 
-  .card-img,
-  .card-body {
+  .card-img {
     width: 100%;
-    border-radius: 20px;
+  }
+
+  .card-body {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    justify-content: flex-end;
+    z-index: 1;
+  }
+
+  .card-body::before {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.75);
   }
 
   .tags-wrapper {
     border-radius: 0 0 20px 20px;
-  }
-
-  .card-text {
-    overflow: hidden;
-  }
-}
-
-@media only screen and (max-width: 576px) {
-  .card-text {
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 8;
-    overflow: hidden;
-  }
-
-  .card-img {
-    height: 15em;
   }
 }

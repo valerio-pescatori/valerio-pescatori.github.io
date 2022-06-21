@@ -13,6 +13,20 @@ const cards = [
     link: "https://github.com/valerio-pescatori/person_re-id",
   },
   {
+    imgSrc: "imgs/godflex.jpg",
+    title: "React Netflix Clone",
+    text: "Collaborative project in which we reproduced a small subset of the main Netflix pages front-end. We used the TMDB Api to get data about movies. The app is build with React (v. 18), the React Router v6 and CSS Modules for the styling. ",
+    tags: ["react.svg", "react-router.svg"],
+    link: "https://github.com/valerio-pescatori/react-netflix",
+  },
+  {
+    imgSrc: "imgs/solidjs.png",
+    title: "SolidJS App",
+    text: "Simple webapp built in SolidJS, a very small (6kb of budle size) reactive declarative framework. It's a webapp that lets you search and read information about countries in the world using the REST Countries API. It is actually my attempt at a FrontendMentor.io challenge which is linked in the github repo.",
+    tags: ["solidjs.svg"],
+    link: "https://github.com/valerio-pescatori/solidjs-rest-countries",
+  },
+  {
     imgSrc: "imgs/clonegram-small.png",
     title: "Clonegram",
     textIt:
@@ -22,13 +36,11 @@ const cards = [
     link: "https://github.com/valerio-pescatori/Ltw-Clonegram",
   },
   {
-    imgSrc: "imgs/jsweet-small.png",
-    title: "Small Jsweet website",
-    textIt:
-      "Piccolo sito web realizzato per il corso di Metodologie di Programmazione A.A. 2018/2019. Entrambe le componenti, front-end e back-end, sono state scritte completamente in java, il codice è stato poi transpilato in JavaScript tramite JSweet. Il sito web realizza una piattaforma collaborativa di annotazione e validazione di dati linguistici e visuali.",
-    text: "Small Jsweet website realised as a final project for the 'Metodologie di Programmazione' course from A.A. 2018/19. Both front-end and back-end was written exclusively in Java, code was then transipled to JavaScript through JSweet. The website works as a cooperative platform for annotation and validation of linguistic and visual data.",
-    tags: ["java.svg", "jsweet.png"],
-    link: "https://github.com/valerio-pescatori/metodologie_Pescatori.1807838",
+    imgSrc: "imgs/subito.png",
+    title: "Subito.it Clone",
+    text: "Front-end replica of the Subito.it website realized using only HTML5 + CSS3. It's a very small project completed in a matter of hours, nothing fancy. The main goal was to reproduce the website as precisely as possible, making it also responsive. I've started using the BEM methodology since this project as it is actually very helpful in naming css classes and keeping the stylesheet very organized.",
+    tags: ["html5.svg", "css3.svg"],
+    link: "https://github.com/valerio-pescatori/solidjs-rest-countries",
   },
   {
     imgSrc: "imgs/this-website.png",
@@ -36,6 +48,15 @@ const cards = [
     text: "This website has been developed using React, it is a single page divided in two sections. I used React for the layout, pure CSS for styling and Framer Motion for the animations. I always try to test new technologies to increment my abilities and keep myself updated on new trends. ",
     tags: ["react.svg", "framer.svg"],
     link: "https://github.com/valerio-pescatori/valerio-pescatori.github.io/tree/source",
+  },
+  {
+    imgSrc: "imgs/jsweet-small.png",
+    title: "Small Jsweet website",
+    textIt:
+      "Piccolo sito web realizzato per il corso di Metodologie di Programmazione A.A. 2018/2019. Entrambe le componenti, front-end e back-end, sono state scritte completamente in java, il codice è stato poi transpilato in JavaScript tramite JSweet. Il sito web realizza una piattaforma collaborativa di annotazione e validazione di dati linguistici e visuali.",
+    text: "Small Jsweet website realised as a final project for the 'Metodologie di Programmazione' course from A.A. 2018/19. Both front-end and back-end was written exclusively in Java, code was then transipled to JavaScript through JSweet. The website works as a cooperative platform for annotation and validation of linguistic and visual data.",
+    tags: ["java.svg", "jsweet.png"],
+    link: "https://github.com/valerio-pescatori/metodologie_Pescatori.1807838",
   },
 ];
 

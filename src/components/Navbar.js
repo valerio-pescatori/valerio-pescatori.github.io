@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
-import { getBreakPoint, debounce } from "./../utils";
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
+import { getBreakPoint } from "../utils";
 
 const variants = {
   meSm: {
@@ -23,35 +23,19 @@ const variants = {
   },
 };
 
-const Header = ({ active, setActive }) => {
+const Navbar = ({ active, setActive }) => {
   const [bp, setBp] = useState(getBreakPoint(window.innerWidth));
 
   // first render
   useEffect(() => {
     setBp(getBreakPoint(window.innerWidth));
-  }, []);
-
-  useEffect(() => {
-    // wrappo la chiamata a debounce in una variabile
-    // const debouncedHandleResize = debounce(setBp, 50, getBreakPoint(window.innerWidth));
-
-    // no debounce version
     const setter = () => setBp(getBreakPoint(window.innerWidth));
-
-    // aggiungo l'event listener
-    // window.addEventListener("resize", debouncedHandleResize);
-
-    // no debounce version
     window.addEventListener("resize", setter);
-
-    // cleanup
     return () => {
-      // window.removeEventListener("resize", debouncedHandleResize);
-
       // no debounce version
       window.removeEventListener("resize", setter);
     };
-  });
+  }, []);
 
   return (
     <div className="container">
@@ -74,4 +58,4 @@ const Header = ({ active, setActive }) => {
   );
 };
 
-export default Header;
+export default Navbar;

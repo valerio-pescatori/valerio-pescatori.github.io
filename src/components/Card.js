@@ -39,20 +39,8 @@ function handleResize() {
 }
 
 const Card = (props) => {
-  useEffect(() => {
-    // wrappo la chiamata a debounce in una variabile
-    const debouncedHandleResize = debounce(handleResize, 50);
-    // aggiungo l'event listener
-    window.addEventListener("resize", debouncedHandleResize);
-
-    // cleanup
-    return () => {
-      window.removeEventListener("resize", debouncedHandleResize);
-    };
-  });
-
   const { ref, inView } = useInView({
-    threshold: 0.7,
+    threshold: 0.5,
   });
 
   const animation = useAnimation();
@@ -68,8 +56,14 @@ const Card = (props) => {
   return (
     <motion.div initial={{ opacity: 0 }} animate={animation} ref={ref}>
       <h3 className="card-title">{props.title}</h3>
-      <motion.a className="card" href={props.link} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
-        <img className="card-img" src={props.imgSrc} onLoad={handleResize}></img>
+      <motion.a
+        className="card"
+        href={props.link}
+        target="_blank"
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.9 }}
+      >
+        <img className="card-img" src={props.imgSrc} />
         <div className="card-body">
           <p className="card-text">
             {props.text}
@@ -77,7 +71,7 @@ const Card = (props) => {
           </p>
           <div className="tags-wrapper">
             {props.tags.map((t, i) => (
-              <img className="tag" src={"icons/" + t} key={i}></img>
+              <img className="tag" src={"icons/" + t} key={i} />
             ))}
           </div>
         </div>

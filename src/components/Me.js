@@ -30,11 +30,11 @@ const Me = () => {
         >
           I'm {new Date().getFullYear() - 1999 - (new Date().getMonth() === 1 && new Date().getDay() < 18 ? 1 : 0)}{" "}
           years old and I got my Bachelor's Degree in Computer Science in March 2022 at Sapienza, University of Rome
-          with a graduation mark of 106/110. My academic background started with the frequentation of Luigi Trafelli
+          with a graduation mark of 106/110. My academic background started with the attendance of Luigi Trafelli
           Techincal Institute from which I got my High School diploma in Computer Science with a final grade mark of
           93/100. After that I immediately applied for the Computer Science course at Sapienza, University of Rome.
           During those years I expanded my knowledge about algorithms and data structures; I've been involved in quite
-          some projects in which I well-estabilished my knowledge with technologies such as Python and the PyTorch
+          some projects in which I well-established my knowledge with technologies such as Python and the PyTorch
           framework, Java, Web technologies such as CSS, JavaScript and a few JS frameworks such as Vue.js and React,
           PHP and the CodeIgniter framework, MySQL, HTML as well as C++ and C#.
         </motion.p>

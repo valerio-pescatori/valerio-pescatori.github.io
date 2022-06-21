@@ -1,4 +1,4 @@
-import Header from "./components/Header";
+import Navbar from "./components/Navbar";
 import Body from "./components/Body";
 import Footer from "./components/Footer";
 import React, { useState, useEffect } from "react";
@@ -19,7 +19,7 @@ function App() {
         <Loader key="load" />
       ) : (
         <React.Fragment key="loaded">
-          <Header active={active} setActive={setActive} />
+          <Navbar active={active} setActive={setActive} />
           <Body active={active} />
           <Footer />
         </React.Fragment>
